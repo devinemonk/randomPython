@@ -1,0 +1,16 @@
+#  create master class and accept function in it
+def masterFunction(func):
+    #  create a wrapper function and return wrapper func
+    def wrapper():
+        print("master order") #  pre execute
+        func() #  orginal func execute
+        print("master order complete") #  post execute
+    
+    return wrapper
+
+#  state master name
+@masterFunction
+def slaveFunction():
+    print("execute master's order") #  slave funnctions
+    
+slaveFunction() #  call slave 
